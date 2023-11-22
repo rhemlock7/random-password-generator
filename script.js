@@ -12,23 +12,44 @@ function generatePassword() {
     let numberOfCharacters = prompt('How many characters should your password include?');
     if (numberOfCharacters < 8 || numberOfCharacters > 128) {
       confirm('Character limit is between 8 and 128. Please try again.');
+      return "Uh oh... Please try again.";
     }
     console.log(numberOfCharacters);
 
     let lowerCase = confirm("Do you want lowercase letters included?");
     if (lowerCase === false) {
-      characters.replace( /[^a-z]/g, '' )
-      console.log(characters)
+      let pattern = new RegExp("[a-z]",'g');
+      characters = characters.replace(pattern, "");
     }
+
+    console.log(characters)
     console.log(lowerCase);
 
     let upperCase = confirm("Do you want upperCase letters included?");
+    if (upperCase === false) {
+      let pattern = new RegExp("[A-Z]",'g');
+      characters = characters.replace(pattern, "");
+    }
+    console.log(characters)
     console.log(upperCase);
 
     let numbers = confirm("Do you want numbers included?");
+    if (numbers === false) {
+      let pattern = new RegExp("[0-9]",'g');
+      characters = characters.replace(pattern, "");
+    }
+
+    console.log(characters);
     console.log(numbers);
 
+    //Need to fix special characters deleting the entire string
     let specialCharacters = confirm("Do you want special characters included? (<>!!@#$!%)");
+    if (specialCharacters === false) {
+      let pattern = new RegExp("[!-~]",'g');
+      characters = characters.replace(pattern, "");
+    }
+
+    console.log(characters);
     console.log(specialCharacters);
 
 
@@ -36,10 +57,13 @@ function generatePassword() {
     //Loop through the set character length and only filter out what was set to false
     let result = '';
     for (i=0; i < numberOfCharacters; i++) {
-      result = characters.charAt(Math.floor(Math.random() * numberOfCharacters));
+      let char = Math.floor(Math.random() * characters.length + 1);
+
+      result += characters.charAt(char);
     };
     
     return result;
+    
 }
 
 // Write password to the #password input
@@ -71,4 +95,8 @@ generateBtn.addEventListener("click", writePassword);
   //Need a for loop to randomize each character of the password.
   //Specify the parameters for each character's randomization.
 
-//Generate password when logic has been confirmed
+//Generate password when logic has been confirmed = COMPLETE
+
+
+//Learned RegExp from GeeksForGeeks:
+// https://www.geeksforgeeks.org/remove-uppercase-lowercase-special-numeric-and-non-numeric-characters-from-a-string/
