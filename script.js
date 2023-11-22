@@ -6,7 +6,7 @@ const generateBtn = document.querySelector("#generate");
 
 function generatePassword() {
     //Characters to include within the password
-    // let characters ='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!"#$%&()*+,-./:;<=>?@[^_`{|}~';
+    //All characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!"#$%&()*+,-./:;<=>?@[^_`{|}~';
     let characters ='';
 
     //Alert prompts
@@ -74,7 +74,3 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
-
-
-//Learned RegExp from GeeksForGeeks:
-// https://www.geeksforgeeks.org/remove-uppercase-lowercase-special-numeric-and-non-numeric-characters-from-a-string/
