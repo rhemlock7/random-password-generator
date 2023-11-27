@@ -16,7 +16,7 @@ You can include or exclude any of the characters below:
 - Special Characters (!@#$%^&*<>?)
 
 ## Screenshot of Deployed Website
-![Screenshot of Deployed Website](<./assets/Screen Shot 2023-11-22 at 10.32.35 AM.png>)
+![Screenshot of Deployed Website](<./assets/images/Screen Shot 2023-11-22 at 10.32.35 AM.png>)
 
 ## Screenshot of Code
-![Screenshot of Code](<./assets/Screen Shot 2023-11-22 at 10.02.55 AM.png>)
+![Screenshot of Code](<./assets/images/Screen Shot 2023-11-22 at 10.02.55 AM.png>)
